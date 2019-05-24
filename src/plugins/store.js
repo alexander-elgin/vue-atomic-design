@@ -3,14 +3,15 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
+const files = require.context('../store', false, /\.js$/);
+const modules = {};
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  },
+files.keys().forEach((key) => {
+  modules[key.replace(/(\.\/|\.js)/g, '')] = {
+    namespaced: true,
+    ...files(key).default,
+  };
 });
+
+const store = new Vuex.Store({ modules });
+export default store;
