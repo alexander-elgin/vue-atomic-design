@@ -15,6 +15,7 @@
     "@mdi/font": "^3.6.95",
     "core-js": "^2.6.5",
     "roboto-fontface": "^0.10.0",
+    "vee-validate": "^2.2.8",
     "vue": "^2.6.10",
     "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.3",
