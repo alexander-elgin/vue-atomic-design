@@ -10,6 +10,13 @@ import store from './plugins/store';
 import './plugins/vee-validate';
 import './plugins/vuetify';
 
+const templates = require.context('./templates', false, /\.vue$/);
+
+templates.keys().forEach((fileName) => {
+  const templateName = fileName.replace('./', '').replace('.vue', '');
+  Vue.component(`${templateName}-template`, templates(fileName).default);
+});
+
 Vue.config.productionTip = false;
 
 new Vue({

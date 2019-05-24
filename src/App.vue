@@ -1,12 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <component :is="template">
+      <router-view />
+    </component>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    template() {
+      return `${this.$route.meta.template || 'default'}-template`;
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
