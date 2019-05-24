@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloI18n.vue';
+import HelloWorld from '@/atoms/HelloI18n.vue';
 
 describe('HelloWorld.vue', () => {
   it('renders props.msg when passed', () => {
