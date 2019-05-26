@@ -6,7 +6,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:build:win32": "vue-cli-service electron:build --windows --ia32",
+    "electron:build:win64": "vue-cli-service electron:build --windows",
+    "electron:serve": "vue-cli-service electron:serve",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
     "test:unit": "vue-cli-service test:unit"
@@ -41,6 +47,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "electron": "^5.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "faker": "^4.1.0",
@@ -48,6 +55,7 @@
     "node-sass": "^4.9.0",
     "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-electron-builder": "^1.3.4",
     "vue-cli-plugin-i18n": "^0.6.0",
     "vue-cli-plugin-storybook": "^0.6.1",
     "vue-cli-plugin-vuetify": "^0.6.3",
@@ -62,5 +70,6 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "main": "background.js"
 }
