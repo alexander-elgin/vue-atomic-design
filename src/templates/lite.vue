@@ -1,9 +1,16 @@
 <template>
   <div>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <v-nav />
     <slot />
   </div>
 </template>
+
+<script>
+import Nav from '@/organisms/nav';
+
+export default {
+  components: {
+    'v-nav': Nav,
+  },
+};
+</script>
