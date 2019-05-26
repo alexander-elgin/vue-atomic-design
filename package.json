@@ -12,8 +12,8 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@mdi/font": "^3.6.95",
     "core-js": "^2.6.5",
+    "material-design-icons-iconfont": "^5.0.1",
     "roboto-fontface": "^0.10.0",
     "vee-validate": "^2.2.8",
     "vue": "^2.6.10",

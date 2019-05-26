@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
 import 'vuetify/src/stylus/app.styl';
 import ru from 'vuetify/es5/locale/ru';
+import 'roboto-fontface/css/roboto/roboto-fontface.css';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.use(Vuetify, {
   theme: {
@@ -16,7 +18,7 @@ Vue.use(Vuetify, {
   options: {
     customProperties: true,
   },
-  iconfont: 'mdi',
+  iconfont: 'md',
   lang: {
     locales: { ru },
     current: 'ru',
