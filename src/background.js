@@ -5,6 +5,7 @@ import {
   createProtocol,
   installVueDevtools,
 } from 'vue-cli-plugin-electron-builder/lib';
+import MenuBuilder from './menu';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -38,6 +39,9 @@ function createWindow() {
   win.on('closed', () => {
     win = null;
   });
+
+  const menuBuilder = new MenuBuilder(win);
+  menuBuilder.buildMenu();
 }
 
 // Quit when all windows are closed.
