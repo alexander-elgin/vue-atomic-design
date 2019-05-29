@@ -14,6 +14,15 @@ module.exports = {
         win: {
           icon: './public/favicon.ico',
         },
+        extraResources: [
+          './resources/bin/sox',
+          './resources/raw-records',
+          './resources/records',
+          './resources/sounds',
+          './resources/scripts',
+        ].map(from => ({ from, to: from.split('/').pop() })).concat([
+          { from: `./resources/bin/baresip/${process.env.ARCH}`, to: './baresip' },
+        ]),
       },
     },
     i18n: {
