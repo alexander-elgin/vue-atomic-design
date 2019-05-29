@@ -5,6 +5,4 @@ export default function (Vue) {
     const templateName = fileName.replace('./', '').replace('.vue', '');
     Vue.component(`${templateName}-template`, templates(fileName).default);
   });
-
-  Vue.config.productionTip = false;// eslint-disable-line no-param-reassign
 }
