@@ -9,6 +9,13 @@ module.exports = {
       .end();
   },
   pluginOptions: {
+    electronBuilder: {
+      builderOptions: {
+        win: {
+          icon: './public/favicon.ico',
+        },
+      },
+    },
     i18n: {
       locale: 'ru',
       fallbackLocale: 'en',
