@@ -3,13 +3,13 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const files = require.context('../store', false, /\.js$/);
+const files = require.context('../store', true, /\.js$/);
 const modules = {};
 
-files.keys().forEach((key) => {
-  modules[key.replace(/(\.\/|\.js)/g, '')] = {
+files.keys().forEach((filePath) => {
+  modules[filePath.replace('./', '').replace('/index.js', '').replace('.js', '')] = {
     namespaced: true,
-    ...files(key).default,
+    ...files(filePath).default,
   };
 });
 
