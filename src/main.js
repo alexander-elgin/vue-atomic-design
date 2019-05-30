@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import App from './App.vue';
+import App from './organisms/app';
 
 import i18n from './plugins/i18n';
 import router from './plugins/router';
