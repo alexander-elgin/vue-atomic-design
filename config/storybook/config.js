@@ -2,11 +2,13 @@
 import { configure, addDecorator } from '@storybook/vue';
 
 import './vuetify';
+import i18n from '@/plugins/i18n';
 import store from '@/plugins/store';
 import '@/plugins/vuetify';
 
 addDecorator(() => ({
   template: '<v-app><story/></v-app>',
+  i18n,
   store,
 }));
 
