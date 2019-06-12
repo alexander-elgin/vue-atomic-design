@@ -3,7 +3,7 @@ import { configure, addDecorator } from '@storybook/vue';
 
 import './vuetify';
 import i18n from '@/plugins/i18n';
-import store from '@/plugins/store';
+import store from '@/plugins/vuex';
 import '@/plugins/vuetify';
 
 addDecorator(() => ({

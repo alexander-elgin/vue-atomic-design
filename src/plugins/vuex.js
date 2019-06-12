@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const files = require.context('../store', true, /\.js$/);
+const files = require.context('../vuex', true, /\.js$/);
 const modules = {};
 
 files.keys().forEach((filePath) => {
@@ -13,5 +13,8 @@ files.keys().forEach((filePath) => {
   };
 });
 
-const store = new Vuex.Store({ modules });
-export default store;
+const vuex = new Vuex.Store({
+  modules,
+  devtools: process.env.NODE_ENV !== 'production',
+});
+export default vuex;
