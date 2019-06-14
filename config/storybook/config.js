@@ -3,6 +3,7 @@ import { configure, addDecorator } from '@storybook/vue';
 
 import './vuetify';
 import i18n from '@/plugins/i18n';
+import '@/plugins/vee-validate';
 import store from '@/plugins/vuex';
 import '@/plugins/vuetify';
 
