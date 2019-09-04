@@ -1,3 +1,9 @@
 {
-  "message": "hello i18n !!"
+  "message": "hello i18n !!",
+  "taxics.organisms.sign-in-form.errors.inactive-account": "The account is inactive",
+  "taxics.organisms.sign-in-form.errors.incorrect-password": "The password is incorrect",
+  "taxics.organisms.sign-in-form.sign-in": "Sign In",
+  "taxics.shared.errors.connection-failure": "Connection is failed. Please, try again later",
+  "taxics.shared.password": "Password",
+  "taxics.shared.phone-number": "Phone Number"
 }
