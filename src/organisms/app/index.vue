@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app>
-      <component :is="template">
+      <component :is="template" style="height: 100%">
         <router-view />
       </component>
     </v-app>
