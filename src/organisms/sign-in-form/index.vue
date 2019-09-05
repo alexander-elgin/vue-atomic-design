@@ -89,7 +89,7 @@ export default {
           this.submitting = true;
           const { username, password } = this;
 
-          this.$http.post(`${process.env.VUE_APP_USERS_API_BASE}/signin`, {
+          this.$http.post(`${process.env.VUE_APP_API_USERS}/signin`, {
             username,
             password,
           })
