@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-nav />
+    <br />
     <img alt="Vue logo" src="../assets/logo.png">
     <slot />
   </div>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-nav />
+    <br />
     <slot />
   </div>
 </template>
