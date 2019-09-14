@@ -2,8 +2,9 @@
   "message": "Привет i18n !!",
   "taxics.organisms.sign-in-form.errors.inactive-account": "Учетная запись - неактивна",
   "taxics.organisms.sign-in-form.errors.incorrect-password": "Неверный пароль",
-  "taxics.organisms.sign-in-form.sign-in": "Вход",
   "taxics.shared.errors.connection-failure": "Ошибка соединения. Попробуйте позже",
   "taxics.shared.password": "Пароль",
-  "taxics.shared.phone-number": "Номер телефона"
+  "taxics.shared.phone-number": "Номер телефона",
+  "taxics.shared.sign-in": "Вход",
+  "taxics.shared.sign-out": "Выйти"
 }

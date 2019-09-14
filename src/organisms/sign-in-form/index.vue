@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-toolbar color="primary" dark flat>
-        <v-toolbar-title>{{ $t('taxics.organisms.sign-in-form.sign-in') }}</v-toolbar-title>
+        <v-toolbar-title>{{ $t('taxics.shared.sign-in') }}</v-toolbar-title>
       </v-toolbar>
       <v-card-text>
         <v-form>
@@ -40,7 +40,7 @@
             <v-progress-circular indeterminate></v-progress-circular>
           </div>
           <div v-if="!submitting">
-            {{ $t('taxics.organisms.sign-in-form.sign-in') }}
+            {{ $t('taxics.shared.sign-in') }}
           </div>
         </v-btn>
       </v-card-actions>

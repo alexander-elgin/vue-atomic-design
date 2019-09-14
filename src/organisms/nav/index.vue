@@ -24,7 +24,7 @@
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
           <v-avatar tile>
-            <img src="../../assets/taxi-icon.svg">
+            <img src="@/assets/taxi-icon.svg">
           </v-avatar>
         </router-link>
         <span class="hidden-sm-and-up">{{ pageTitle }}</span>
@@ -46,16 +46,27 @@
 </template>
 
 <script>
+import { isAuthorized } from '@/utils/current-user';
+
 export default {
   name: 'Nav',
   data() {
-    return {
-      sidebar: false,
-      menuItems: [
-        { title: 'Home', path: '/', icon: 'home' },
-        { title: 'Activities', path: '/activities', icon: 'face' },
-      ],
-    };
+    let menuItems = [
+      { title: 'Home', path: '/', icon: 'home' },
+      { title: 'Activities', path: '/activities', icon: 'face' },
+    ];
+
+    if (isAuthorized()) {
+      menuItems = menuItems.concat([
+        { title: this.$t('taxics.shared.sign-out'), path: '/sign-out', icon: 'power_settings_new' },
+      ]);
+    } else {
+      menuItems = menuItems.concat([
+        { title: this.$t('taxics.shared.sign-in'), path: '/sign-in', icon: 'exit_to_app' },
+      ]);
+    }
+
+    return { sidebar: false, menuItems };
   },
   computed: {
     pageTitle() {
