@@ -34,8 +34,15 @@ export default new Router({
       beforeEnter: redirectToAuthorized,
       path: '/sign-in',
       name: 'sign-in',
-      component: () => import(/* webpackChunkName: "page-sign-in" */ '../pages/sign-in'),
+      component: () => import(/* webpackChunkName: "page-sign-in" */ '@/pages/sign-in'),
       meta: { template: 'blank' },
+    },
+    {
+      beforeEnter: redirectToNotAuthorized,
+      path: '/sign-out',
+      name: 'sign-out',
+      component: () => import('@/pages/sign-out'),
+      meta: { template: 'default' },
     },
   ],
 });
