@@ -24,7 +24,7 @@
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
           <v-avatar tile>
-            <img src="@/assets/taxi-icon.svg">
+            <img src="./taxi-icon.svg">
           </v-avatar>
         </router-link>
         <span class="hidden-sm-and-up">{{ pageTitle }}</span>
