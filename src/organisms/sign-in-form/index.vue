@@ -45,31 +45,19 @@
         </v-btn>
       </v-card-actions>
     </v-card>
-    <v-snackbar
-      :value="this.errors.collect('').length > 0"
-      :bottom="true"
-      :center="true"
-      :multi-line="false"
-      :timeout="3000"
-      :vertical="false"
-      color="secondary"
-    >
-      <v-layout row align-center>
-        <v-flex>
-          <v-icon left dark>error</v-icon>
-        </v-flex>
-        <v-flex>
-          {{ this.errors.collect('').join(' ') }}
-        </v-flex>
-      </v-layout>
-    </v-snackbar>
+    <v-error-notification :notification="errors.collect('').join(' ')">
+    </v-error-notification>
   </div>
 </template>
 
 <script>
 import { setData, setToken } from '@/utils/current-user';
+import ErrorNotification from '@/molecules/notifications/error';
 
 export default {
+  components: {
+    'v-error-notification': ErrorNotification,
+  },
   data() {
     return {
       submitting: false,
@@ -83,6 +71,7 @@ export default {
     },
     submit() {
       if (!this.submitting) {
+        this.errors.clear();
         this.$validator.validateAll();
 
         if (this.isValid()) {
