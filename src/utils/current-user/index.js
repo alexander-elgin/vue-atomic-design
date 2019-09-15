@@ -4,6 +4,7 @@ import {
   remove,
   set,
 } from 'js-cookie';
+import { isEmpty } from 'lodash';
 
 const BASIC_STORAGE_NAME = 'CURRENT_USER';
 const DATA_STORAGE_NAME = `${BASIC_STORAGE_NAME}/DATA`;
@@ -15,6 +16,11 @@ export function getData() {
 
 export function getToken() {
   return get(TOKEN_STORAGE_NAME);
+}
+
+export function getType() {
+  const user = getData();
+  return isEmpty(user) ? undefined : user.type;
 }
 
 export function isAuthorized() {

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import { isAuthorized } from '@/utils/current-user';
+import { getType, isAuthorized } from '@/utils/current-user';
 
 import Home from '../pages/Home.vue';
 
@@ -9,6 +9,7 @@ Vue.use(Router);
 
 const redirectToNotAuthorized = (to, from, next) => next(isAuthorized() ? undefined : '/sign-in');
 const redirectToAuthorized = (to, from, next) => next(isAuthorized() ? '/' : undefined);
+const isUserType = userTypes => (to, from, next) => next(userTypes.includes(getType()) ? undefined : '/sign-in');
 
 export default new Router({
   mode: 'history',
@@ -22,6 +23,7 @@ export default new Router({
       meta: { template: 'default' },
     },
     {
+      beforeEnter: isUserType(['admin']),
       path: '/activities',
       name: 'activities',
       // route level code-splitting
