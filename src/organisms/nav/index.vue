@@ -19,7 +19,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar>
+    <v-app-bar :app="absolute">
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="hidden-sm-and-up"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
@@ -72,6 +72,9 @@ export default {
     pageTitle() {
       return this.$store.state.nav.pageTitle;
     },
+  },
+  props: {
+    absolute: Boolean,
   },
 };
 </script>
