@@ -4,6 +4,9 @@ import { isEmpty } from 'lodash';
 
 import { getToken, isAuthorized } from '@/utils/current-user';
 
+const serializeParams = params => Object.keys(params)
+  .map(param => `${param}=${encodeURIComponent(JSON.stringify(params[param]))}`).join('&');
+
 const supplementHeaders = (config) => {
   if (isEmpty(config.headers)) {
     config.headers = {};
@@ -28,9 +31,9 @@ const originalMethods = HTTP_METHODS_WITHOUT_DATA.concat(HTTP_METHODS_WITH_DATA)
   }, {});
 
 HTTP_METHODS_WITHOUT_DATA.forEach((method) => {
-  axios[method] = (url, config = {}) => {
+  axios[method] = (url, data = {}, config = {}) => {
     supplementHeaders(config);
-    return originalMethods[method](url, config);
+    return originalMethods[method](`${url}${isEmpty(data) ? '' : `?${serializeParams(data)}`}`, config);
   };
 });
 
