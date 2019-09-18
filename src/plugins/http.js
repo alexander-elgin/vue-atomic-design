@@ -4,8 +4,10 @@ import { isEmpty } from 'lodash';
 
 import { getToken, isAuthorized } from '@/utils/current-user';
 
+// eslint-disable-next-line no-confusing-arrow
+const serializeParam = param => typeof param === 'object' ? JSON.stringify(param) : param;
 const serializeParams = params => Object.keys(params)
-  .map(param => `${param}=${encodeURIComponent(JSON.stringify(params[param]))}`).join('&');
+  .map(param => `${param}=${encodeURIComponent(serializeParam(params[param]))}`).join('&');
 
 const supplementHeaders = (config) => {
   if (isEmpty(config.headers)) {
