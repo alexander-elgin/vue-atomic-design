@@ -13,7 +13,7 @@
             :error-messages="errors.collect('username')"
             :data-vv-as="$t('taxics.shared.phone-number')"
             :label="$t('taxics.shared.phone-number')"
-            prepend-icon="person"
+            prepend-icon="phone"
             type="text"
             @keydown.enter.prevent="submit"
             :disabled="submitting"
