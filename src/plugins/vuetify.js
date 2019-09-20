@@ -7,13 +7,18 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.use(Vuetify);
 
+const palette = {
+  primary: colors.amber,
+  secondary: colors.red,
+  success: colors.green,
+};
+
 export default new Vuetify({
   theme: {
+    dark: false,
     themes: {
-      light: {
-        primary: colors.green,
-        secondary: colors.red,
-      },
+      dark: palette,
+      light: palette,
     },
     options: {
       customProperties: true,

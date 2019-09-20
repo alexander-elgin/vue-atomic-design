@@ -1,7 +1,7 @@
 <template>
   <v-notification
     icon="check_circle"
-    color="primary"
+    color="success"
     :notification="notification"
   >
   </v-notification>
