@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-toolbar color="primary" dark flat>
+      <v-toolbar color="primary" flat>
         <v-toolbar-title>{{ $t('taxics.shared.sign-in') }}</v-toolbar-title>
       </v-toolbar>
       <v-card-text>
@@ -35,7 +35,7 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="submit()" :disabled="submitting">
+        <v-btn color="primary" @click="submit()" :disabled="submitting" class="black--text">
           <div v-if="submitting">
             <v-progress-circular indeterminate></v-progress-circular>
           </div>
