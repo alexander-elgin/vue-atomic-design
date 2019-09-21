@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="sidebar" app>
+    <v-navigation-drawer v-model="sidebar" app class="hidden-sm-and-up" disable-resize-watcher>
       <v-list nav>
         <v-list-item-group>
           <v-list-item
