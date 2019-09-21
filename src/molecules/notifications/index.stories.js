@@ -14,7 +14,7 @@ storiesOf('notification', module)
         icon="error"
         color="secondary"
         notification="An error occurred"
-        timeout="0"
+        :timeout="0"
       >
       </v-notification>
     `,
