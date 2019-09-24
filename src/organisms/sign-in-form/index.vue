@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import { getUrl } from '@/utils/api';
 import { setData, setToken } from '@/utils/current-user';
 import ErrorNotification from '@/molecules/notifications/error';
 
@@ -78,7 +79,7 @@ export default {
           this.submitting = true;
           const { username, password } = this;
 
-          this.$http.post(`${process.env.VUE_APP_API_USERS}/signin`, {
+          this.$http.post(getUrl('users', '/signin'), {
             username,
             password,
           })
