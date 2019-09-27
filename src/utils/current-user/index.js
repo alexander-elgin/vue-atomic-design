@@ -36,6 +36,5 @@ export function setToken(token) {
 }
 
 export function signOut() {
-  remove(TOKEN_STORAGE_NAME);
-  remove(TOKEN_STORAGE_NAME);
+  [TOKEN_STORAGE_NAME, DATA_STORAGE_NAME].forEach(storageName => remove(storageName));
 }
