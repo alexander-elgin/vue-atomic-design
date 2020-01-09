@@ -2,25 +2,25 @@
   <div>
     <v-navigation-drawer v-model="sidebar" app class="hidden-sm-and-up" disable-resize-watcher>
       <v-list nav>
-        <v-list-item-group>
-          <v-list-item
-            v-for="item in menuItems"
-            :key="item.title"
-            :to="item.path"
-          >
-            <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-content class="text-left">
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
+        <v-list-tile
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path"
+          avatar
+        >
+          <v-list-tile-avatar>
+            <v-icon v-text="item.icon"></v-icon>
+          </v-list-tile-avatar>
+          <v-list-tile-content class="text-left">
+            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar :app="absolute">
-      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="hidden-sm-and-up"></v-app-bar-nav-icon>
+    <v-toolbar :app="absolute">
+      <v-toolbar-side-icon @click="sidebar = !sidebar" class="hidden-sm-and-up">
+      </v-toolbar-side-icon>
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
           <v-avatar tile>
@@ -35,13 +35,13 @@
           v-for="item in menuItems"
           :key="item.title"
           :to="item.path"
-          text
+          flat
         >
           <v-icon left>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
-    </v-app-bar>
+    </v-toolbar>
   </div>
 </template>
 

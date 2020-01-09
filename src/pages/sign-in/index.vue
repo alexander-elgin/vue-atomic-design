@@ -1,10 +1,10 @@
 <template>
   <v-container fill-height>
-    <v-row align="center" justify="center">
-      <v-col cols="auto">
+    <v-layout row align-center justify-center>
+      <v-flex xs12 sm8 md6 lg4>
         <v-sign-in />
-      </v-col>
-    </v-row>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 

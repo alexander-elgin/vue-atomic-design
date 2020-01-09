@@ -21,4 +21,5 @@ module.exports = {
       enableInSFC: true,
     },
   },
+  transpileDependencies: [/node_modules[/\\\\]vuetify[/\\\\]/],
 };
