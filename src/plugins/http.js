@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 import { isEmpty } from 'lodash';
-import LRU from 'receptacle';
+import LRU from 'lru-cache';
 
 import { getToken, isAuthorized } from '@/utils/current-user';
 
@@ -24,7 +24,7 @@ const supplementHeaders = (config) => {
   return config;
 };
 
-const cache = new LRU({ max: 128 });
+const cache = new LRU(128);
 
 const HTTP_METHODS_WITHOUT_DATA = ['delete', 'get'];
 const HTTP_METHODS_WITH_DATA = ['post', 'put'];
@@ -47,7 +47,7 @@ HTTP_METHODS_WITHOUT_DATA.forEach((method) => {
     const result = originalMethods[method](url, config);
 
     if (config.cache !== undefined) {
-      cache.set(url, result, { ttl: config.cache });
+      cache.set(url, result, config.cache);
     }
 
     return result;
