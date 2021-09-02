@@ -3,6 +3,7 @@ import Vue from 'vue';
 import App from './organisms/app';
 
 import i18n from './plugins/i18n';
+import './plugins/moment';
 import router from './plugins/router';
 import store from './plugins/vuex';
 import registerTemplates from './plugins/templates';

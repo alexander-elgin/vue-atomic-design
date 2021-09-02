@@ -1,3 +1,6 @@
 {
-  "message": "Привет i18n !!"
+  "lanck.pages.home.currency": "Валюта",
+  "lanck.pages.home.date": "Дата",
+  "lanck.pages.home.exchangeRates": "Курсы валют",
+  "lanck.pages.home.rate": "Курс"
 }
