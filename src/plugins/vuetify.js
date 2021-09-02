@@ -8,8 +8,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.use(Vuetify, {
   theme: {
-    primary: colors.green,
-    secondary: colors.red,
+    primary: colors.blue,
   },
   options: {
     customProperties: true,
