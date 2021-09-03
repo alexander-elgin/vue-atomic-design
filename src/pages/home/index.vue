@@ -80,6 +80,7 @@ export default {
           value: 'currency',
         },
         {
+          sortable: false,
           text: this.$t('lanck.pages.home.rate'),
           value: 'rate',
         },
